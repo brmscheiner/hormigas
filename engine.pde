@@ -1,21 +1,20 @@
 
-hormiga[] ants;
+Hormiga[] ants;
 
 void setup() {
   size(600,600);
   background(0);
   frameRate(2);
-  hormiga[] ants = new hormiga[100];
+  ants = new Hormiga[100];
   for (int i=0;i<100;i++) {
-    ants[i] = new hormiga(random(0,width),random(0,height));
+    ants[i] = new Hormiga(random(0,width),random(0,height));
   }
 }
 
 void draw() {
-  println(ants);
+  background(0);
   for (int i=0;i<ants.length;i++) {
-    println(i);
-//    ants[i].display();
-//    ants[i].move();
+    ants[i].display();
+    ants[i].move();
   }
 }

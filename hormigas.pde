@@ -1,8 +1,7 @@
-class hormiga {
-  float x;
-  float y;
+class Hormiga {
+  float x, y;
   
-  hormiga(float xpos, float ypos) {
+  Hormiga(float xpos, float ypos) {
     x = xpos;
     y = ypos;
   }
@@ -13,8 +12,8 @@ class hormiga {
   }
   
   void move() {
-    x += random(-1,1);
-    y += random(-1,1);
+    x += random(-10,10);
+    y += random(-10,10);
   }
 }
 
