@@ -10,20 +10,27 @@ class Hormiga {
   
   void display() {
     fill(150,100,50);
-    ellipse(x,y,30,30);
+    ellipse(x,y,10,10);
   }
   
   void move() {
     if (hungry) {
-      x += int(max(min(random(-10,10),width),0));
-      y += int(max(min(random(-10,10),height),0));
-      println(x);
-      println(y);
+      x += random(-10,10);
+      y += random(-10,10);
     }
-//    println(width*y+x);
-//    if (sugar[int(width*y+x)]) {
-//      hungry = false;
-//    }
+    boolean foundSugar;
+    try {
+      foundSugar = sugar[int(width*y+x)];
+    } catch (NullPointerException e) {
+      foundSugar = false; // ant is offscreen
+    } catch (ArrayIndexOutOfBoundsException e) {
+      foundSugar = false; // ant is offscreen
+    } 
+    
+    if (foundSugar==true) {
+        hungry = false;
+      }
+    
   }
 }
 
