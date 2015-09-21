@@ -9,7 +9,7 @@ class Hormiga {
   }
   
   void display() {
-    fill(150,100,50);
+    fill(150,30,0);
     ellipse(x,y,10,10);
   }
   
