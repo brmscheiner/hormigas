@@ -1,6 +1,7 @@
 
 Hormiga[] ants;
 Boolean[] sugar;
+int n;
 
 void setup() {
   size(650,500);
@@ -8,9 +9,10 @@ void setup() {
   frameRate(8);
   
   setSugar();
+  n=100;
   
-  ants = new Hormiga[100];
-  for (int i=0;i<100;i++) {
+  ants = new Hormiga[n];
+  for (int i=0;i<n;i++) {
     ants[i] = new Hormiga(random(0,width),random(0,height));
   }
 }
