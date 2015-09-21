@@ -3,9 +3,11 @@ Hormiga[] ants;
 Boolean[] sugar;
 
 void setup() {
-  size(600,600);
+  size(650,500);
   background(0);
-//  frameRate(2);
+  frameRate(8);
+  
+  setSugar();
   
   ants = new Hormiga[100];
   for (int i=0;i<100;i++) {
