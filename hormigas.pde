@@ -1,8 +1,8 @@
 class Hormiga {
-  float x, y;
+  int x, y;
   boolean hungry;
   
-  Hormiga(float xpos, float ypos) {
+  Hormiga(int xpos, int ypos) {
     x = xpos;
     y = ypos;
     hungry = true;
@@ -17,12 +17,12 @@ class Hormiga {
   
   void move() {
     if (hungry) {
-      x += random(-10,10);
-      y += random(-10,10);
+      x += int(random(-10,10));
+      y += int(random(-10,10));
     }
     boolean foundSugar;
     try {
-      foundSugar = sugar[int(width*y+x)];
+      foundSugar = sugar[width*y+x];
     } catch (NullPointerException e) {
       foundSugar = false; // ant is offscreen
     } catch (ArrayIndexOutOfBoundsException e) {

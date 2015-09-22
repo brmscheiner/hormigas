@@ -9,11 +9,11 @@ void setup() {
   frameRate(8);
   
   setSugar();
-  n=30;
+  n=1000;
   
   ants = new Hormiga[n];
   for (int i=0;i<n;i++) {
-    ants[i] = new Hormiga(random(0,width),random(0,height));
+    ants[i] = new Hormiga(int(random(0,width)),int(random(0,height)));
   }
 }
 
