@@ -1,5 +1,3 @@
-
-
 void setSugar() {
   PImage img;
   img = loadImage("atta.jpg");
@@ -18,4 +16,12 @@ void setSugar() {
   updatePixels();
 }
 
+//void setSmell() {
+//  smell = new int[width*height];
+//  for (int i=0;i<width;i++) {
+//    for (int j=0;j<height;j++) {
+//      
+//    }
+//  }
+//}
 
