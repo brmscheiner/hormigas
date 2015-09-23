@@ -29,8 +29,11 @@ class Hormiga {
   
   void move() {
     if (hungry) {
-      x += int(random(-10,10));
-      y += int(random(-10,10));
+//      x += int(random(-10,10));
+//      y += int(random(-10,10));
+      lastmove = smell();
+      x += lastmove[0];
+      y += lastmove[1];
     }
     
     
@@ -58,7 +61,7 @@ class Hormiga {
         }
       }
     }
-    
+    return lastmove;
   }
   
   boolean findSugar(int searchx, int searchy) {
