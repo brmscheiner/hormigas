@@ -21,10 +21,19 @@ class Hormiga {
   }
   
   void display() {
+    stroke(150,150,50);
+    line(x,y,x-6,y-6);
+    line(x,y,x+6,y+6);
+    line(x,y,x-6,y+6);
+    line(x,y,x+6,y-6);
+    line(x,y,x+7,y);
+    line(x,y,x-7,y);
     fill(150,150,50);
-    ellipse(x,y,10,10);
-    ellipse(x,y+10,10,10);
-    ellipse(x+10,y,10,10);
+    ellipse(x,y,6,7);
+    ellipse(x,y+7,8,10);
+    ellipse(x,y-5,6.5,7.5);
+    
+    //ellipse(x+10,y,10,10);
   }
   
   void move() {
@@ -34,8 +43,7 @@ class Hormiga {
       lastmove = smell();
       x += lastmove[0];
       y += lastmove[1];
-    }
-    
+    }    
     
     if (findSugar(x,y)==true) {
         hungry = false;
