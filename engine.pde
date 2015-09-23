@@ -1,6 +1,7 @@
 
 Hormiga[] ants;
 Boolean[] sugar;
+int[] smell;
 int n;
 
 void setup() {
@@ -9,7 +10,11 @@ void setup() {
   frameRate(8);
   
   setSugar();
+<<<<<<< HEAD
   n=500;
+=======
+  n=200;
+>>>>>>> origin/master
   
   ants = new Hormiga[n];
   for (int i=0;i<n;i++) {
