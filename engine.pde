@@ -3,14 +3,15 @@ Hormiga[] ants;
 Boolean[] sugar;
 int[] smell;
 int n;
+int frames;
 
 void setup() {
   size(650,500);
   background(0);
 //  frameRate(8);
-  
+  frames=0;
   setSugar();
-  n=10;
+  n=300;
   
   ants = new Hormiga[n];
   for (int i=0;i<n;i++) {
@@ -19,9 +20,20 @@ void setup() {
 }
 
 void draw() {
-  background(0);
-  for (int i=0;i<ants.length;i++) {
-    ants[i].display();
-    ants[i].move();
+  while (frames<1400) {
+    frames++;
+    background(0);
+    for (int i=0;i<ants.length;i++) {
+      ants[i].display();
+      ants[i].move();
+    }
+    if (frames<10) {
+      save("000"+frames+".png");
+    } else if (frames<100) {
+      save("00"+frames+".png");
+    } else if (frames<1000) {
+      save("0"+frames+".png");
+    } else
+      save(frames+".png");
   }
 }
