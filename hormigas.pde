@@ -56,7 +56,7 @@ class Hormiga {
     // scan up to 30 pixels in each direction for sugar 
     int searchx, searchy;
     int movement[] = new int[2];
-    for (int i=0;i<=30;i++) {
+    for (int i=0;i<=5;i++) {
       for (int xvect=-1;xvect<=1;xvect++) {
         for (int yvect=-1;yvect<=1;yvect++) {
           searchx = x+xvect*i;
@@ -69,7 +69,37 @@ class Hormiga {
         }
       }
     }
-    return lastmove;
+    //wiggles
+    if (random(0,1)>0.94) {
+      if (lastmove[0]==0) {
+        if (random(0,1)>0.5) {
+          movement[0] = 1;
+          movement[1] = lastmove[1];
+        } else {
+          movement[0] = -1;
+          movement[1] = lastmove[1];
+        }
+      } else if (lastmove[1]==0) {
+        if (random(0,1)>0.5) {
+          movement[1] = 1;
+          movement[0] = lastmove[0];
+        } else {
+          movement[1] = -1;
+          movement[0] = lastmove[0];
+        }
+      } else {
+        if (random(0,1)>0.5) {
+          movement[0] = 0;
+          movement[1] = lastmove[1];
+        } else {
+          movement[1] = 0;
+          movement[0] = lastmove[0];
+        }
+      }
+    } else {
+      movement = lastmove;
+    }
+    return movement;
   }
   
   boolean findSugar(int searchx, int searchy) {

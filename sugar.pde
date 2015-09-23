@@ -14,6 +14,7 @@ void setSugar() {
     }
   }
   updatePixels();
+  
 }
 
 //void setSmell() {
