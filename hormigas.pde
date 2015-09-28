@@ -21,19 +21,40 @@ class Hormiga {
   }
 
   void display() {
+    pushMatrix();
+    translate(x,y);
+
+    if (lastmove[0]==1 && lastmove[1]==-1) {
+      rotate(PI/4);
+    } else if (lastmove[0]==0 && lastmove[1]==-1) {
+      rotate(0);
+    } else if (lastmove[0]==-1 && lastmove[1]==-1) {
+      rotate(PI/2+PI/4);
+    } else if (lastmove[0]==-1 && lastmove[1]==0) {
+      rotate(PI+PI/2);
+    } else if (lastmove[0]==-1 && lastmove[1]==1) {
+      rotate(PI+PI/4);
+    } else if (lastmove[0]==0 && lastmove[1]==1) {
+      rotate(PI);
+    } else if (lastmove[0]==1 && lastmove[1]==1) {
+      rotate(PI+PI/2+PI/4);
+    } else if (lastmove[0]==1 && lastmove[1]==0) {
+      rotate(PI/2);
+    }
+
     stroke(191, 113, 12);
     fill(191, 113, 12);
-    line(x, y, x-6, y-6);
-    line(x, y, x+6, y+6);
-    line(x, y, x-6, y+6);
-    line(x, y, x+6, y-6);
-    line(x, y, x+7, y);
-    line(x, y, x-7, y);
-    ellipse(x, y, 6, 7);
-    ellipse(x, y+7, 8, 10);
-    ellipse(x, y-5, 6.5, 7.5);
+    line(0, 0, -6, -6);
+    line(0, 0, 6, 0+6);
+    line(0, 0, 0-6, 0+6);
+    line(0, 0, 0+6, 0-6);
+    line(0, 0, 0+7, 0);
+    line(0, 0, 0-7, 0);
+    ellipse(0, 0, 6, 7);
+    ellipse(0, 0+7, 8, 10);
+    ellipse(0, 0-5, 6.5, 7.5);
 
-    //ellipse(x+10,y,10,10);
+    popMatrix();
   }
 
   void move() {
@@ -48,8 +69,7 @@ class Hormiga {
           // does the sugar get eaten??
         }
     } else {
-      
-      
+          
       int searchx, searchy;
       searchx = x+lastmove[0];
       searchy = y+lastmove[1];
