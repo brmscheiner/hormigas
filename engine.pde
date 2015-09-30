@@ -11,7 +11,7 @@ void setup() {
   frameRate(8);
   frames=0;
   setSugar();
-  n=250;
+  n=50;
   
   ants = new Hormiga[n];
   for (int i=0;i<n;i++) {
