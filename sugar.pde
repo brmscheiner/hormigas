@@ -1,6 +1,6 @@
 void setSugar() {
   PImage img;
-  img = loadImage("atta.jpg");
+  img = loadImage("leandra.jpg");
   image(img,0,0);
   
   loadPixels();
